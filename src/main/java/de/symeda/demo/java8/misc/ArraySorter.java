@@ -2,6 +2,7 @@ package de.symeda.demo.java8.misc;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ArraySorter {
 
@@ -10,17 +11,17 @@ public class ArraySorter {
 
 	public void initAndSort() {
 
-		for (int i = 0; i < numbers.length; i++) {
+		Random random = new Random(System.currentTimeMillis());
 
-			final int value = new Random().nextInt(Integer.MAX_VALUE);
+		AtomicInteger index = new AtomicInteger(0);
+		random.ints(numbers.length).forEach(i -> {
 
-			numbers[i] = value;
-			numbers_2[i] = value;
-		}
+			numbers[index.get()] = i;
+			numbers_2[index.getAndIncrement()] = i;
+		});
 
 		this.parallelSort();
 		this.sort();
-
 	}
 
 	protected void sort() {
