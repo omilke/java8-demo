@@ -1,6 +1,6 @@
 package de.symeda.demo.java8.defaultimplementation;
 
-public class CustomAnswer implements TheInterface, TheSecondInterface {
+public class CustomAnswer implements ProvidingAnswer, ProvidingAnswerAsWell {
 
 	@Override
 	public String getAnswer() {
@@ -9,7 +9,7 @@ public class CustomAnswer implements TheInterface, TheSecondInterface {
 	}
 
 	@Override
-	public String theMethod() {
+	public String displayAnswer() {
 
 		return "A: " + getAnswer();
 	}

@@ -9,11 +9,11 @@ import org.junit.Test;
 public class CustomAnswerTest {
 
 	@Test
-	public void testTheMethod() throws Exception {
-
-		CustomAnswer cut = new CustomAnswer();
-
-		assertThat(cut.theMethod(), is(equalTo("A: 47 11")));
-	}
+		public void testDisplayAnswer() throws Exception {
+	
+			CustomAnswer cut = new CustomAnswer();
+	
+			assertThat(cut.displayAnswer(), is(equalTo("A: 47 11")));
+		}
 
 }

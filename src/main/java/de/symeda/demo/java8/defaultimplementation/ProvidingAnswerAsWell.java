@@ -1,8 +1,8 @@
 package de.symeda.demo.java8.defaultimplementation;
 
-public interface TheSecondInterface {
+public interface ProvidingAnswerAsWell {
 
-	public default String theMethod() {
+	public default String displayAnswer() {
 
 		return "A:";
 	};

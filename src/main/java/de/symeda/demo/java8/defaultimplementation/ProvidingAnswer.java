@@ -1,11 +1,11 @@
 package de.symeda.demo.java8.defaultimplementation;
 
 @FunctionalInterface
-public interface TheInterface {
+public interface ProvidingAnswer {
 
 	String ANSWER_IS = "answer is ";
 
-	default String theMethod() {
+	default String displayAnswer() {
 
 		return ANSWER_IS + this.getAnswer();
 	}

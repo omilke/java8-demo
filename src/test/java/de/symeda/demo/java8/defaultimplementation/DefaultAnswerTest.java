@@ -13,7 +13,7 @@ public class DefaultAnswerTest {
 
 		DefaultAnswer cut = new DefaultAnswer();
 
-		assertThat(cut.theMethod(), is(equalTo(TheInterface.ANSWER_IS + "42")));
+		assertThat(cut.displayAnswer(), is(equalTo(ProvidingAnswer.ANSWER_IS + "42")));
 	}
 
 }
