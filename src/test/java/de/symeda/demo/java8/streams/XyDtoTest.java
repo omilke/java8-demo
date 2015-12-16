@@ -101,7 +101,7 @@ public class XyDtoTest {
 		// @formatter:off
 		List<XyDto> collected = all.stream()
 			.filter(c -> c.getType() == Type.VALUE_A)
-			.sorted((o1, o2) -> o1.getChangeDate().compareTo(o2.getChangeDate()))
+			.sorted(Comparator.comparing(XyDto::getChangeDate))
 			.limit(5)
 			.collect(Collectors.toList());
 		// @formatter:on
@@ -298,8 +298,9 @@ public class XyDtoTest {
 //			.parallel()
 			.map(XyDto::getValue)
 			.reduce(BigDecimal.ONE, (f, s) -> {
-				System.out.println(String.format("%s * %s", f.toString(), s.toString()));
-				return f.multiply(s);
+				final BigDecimal result = f.multiply(s);
+				System.out.println(String.format("%s * %s = %s", f.toString(), s.toString(), result.toString()));
+				return result;
 			});
 		// @formatter:on
 
